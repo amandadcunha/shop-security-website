@@ -37,7 +37,7 @@ class IPWebCam(object):
     def __del__(self):
         cv2.destroyAllWindows()
 
-    def get_frame(self):
+    def recognizer(self):
         imgResp = urllib.request.urlopen(self.url)
         imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
         img = cv2.imdecode(imgNp, -1)

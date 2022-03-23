@@ -50,7 +50,7 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
     background-color: #4e73df;
-    background-image: linear-gradient(180deg,#4e73df 10%,#224abe);
+    background-image: linear-gradient(180deg,#000000 10%,#224abe);
     background-size: cover;
 }
 
@@ -60,7 +60,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 24px;
-    background-color: #4e73df;
+    background-color: #000000;
 }
 
 #sidebar ul p {

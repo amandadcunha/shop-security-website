@@ -5,7 +5,7 @@ from django.http.response import StreamingHttpResponse
 from django.shortcuts import render, redirect
 from smart_lock.models import logs
 from datetime import date
-from smart_lock.recognizer import FaceRecognizer
+from smart_lock.recognizer import FaceRecognizer, IPWebCam
 
 def unauthenticated_user(view_func):
     def wrapper_func(request, *args, **kwargs):
@@ -34,7 +34,7 @@ def gen1(camera):
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 def recognizer_feed(request):
-    return StreamingHttpResponse(gen1(FaceRecognizer()),
+    return StreamingHttpResponse(gen1(IPWebCam()),
                                  content_type='multipart/x-mixed-replace; boundary=frame')
 
 # LOGIN

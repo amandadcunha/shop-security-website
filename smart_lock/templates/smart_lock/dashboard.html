@@ -18,12 +18,12 @@
                 <i class="fas fa-arrow-left"></i>
             </div>
             <div class="sidebar-header" style="text-align: center;">
-                <h4>SMART DOOR LOCK</h4>
+                <h4>SECURITY SYSTEM</h4>
             </div>
 
             <ul id="nav-list">
                 <li class="active"><a class="nav-item" href="#">Dashboard</a></li>
-                <li><a class="nav-item" href="logs">Logs</a></li>
+                <li><a class="nav-item" href="logs">Stats</a></li>
             </ul>
 
             <ul class="list-unstyled logout">
@@ -34,7 +34,7 @@
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #4e73df;">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #000000;">
                         <i class="fas fa-align-justify"></i>
                     </button>
                     <button id="btn1" class="btn d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">{{request.user}}</button>
@@ -54,41 +54,12 @@
             <div class="container-fluid">
                 <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
                 <div class="row">
-                    <div class="col-lg-7 col-xl-8">
+                    <div class="col-lg-9 col-xl-8">
                         <div class="card shadow mb-4">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h6 class="text-primary font-weight-bold m-0">Live Video Stream</h6>
                             </div>
                             <div class="card-body text-center"><img class="p-1" id="size" src="{% url 'rec_feed' %}"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-xl-4">
-                        <div class="card shadow mb-4">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h6 class="text-primary font-weight-bold m-0">Today's Log</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive table table-bordered mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                                    {% block content %}
-                                    <table class="table my-0" id="dataTable">
-                                        <thead>
-                                            <tr>
-                                                <th>Person</th>
-                                                <th>TIME</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="logrecords">
-                                            {% for logs in log %}
-                                            <tr>
-                                                <td>{{logs.NAME}}</td>
-                                                <td>{{logs.VISIT_TIME}}</td>
-                                            </tr>
-                                            {% endfor %}
-                                        </tbody>
-                                    </table>
-                                    {% endblock content %}
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
